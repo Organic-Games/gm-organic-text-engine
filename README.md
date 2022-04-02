@@ -1,7 +1,7 @@
 # **Organic Text Engine**
-**An easy and customizable text engine for GameMaker:Studio 2**
+**An easy and customizable text engine for GameMaker**
 ## **Install**
-The text engine comes as a package for GMS2. Simply create a project, click on the Tools menu, and click *Import Local Package*. Select the *OrganicTextEngine.yymps* file you downloaded.
+The text engine comes as a package for GameMaker. Simply create a project, click on the Tools menu, and click *Import Local Package*. Select the *OrganicTextEngine.yymps* file you downloaded.
 The package includes an object named ```obj_textengine``` and a script named ```text_engine_print```.
 ## **Usage**
 ### **Making Text**
@@ -54,7 +54,7 @@ If the ```advancedtext``` parameter is ```true```, you can use control codes to 
 |Text|Description|Parameter|
 --- | --- | ---
 |```style```|Change style|Style number
-|```color```|Change text color|Any GMS2 color asset (without the ```c_```)
+|```color```|Change text color|Any GameMaker color asset (without the ```c_```)
 |```extra```|Change extra data|Any number
 
 You are able to write multiple control codes in one pair of square brackets, like so: ```[color red, style 1]```
