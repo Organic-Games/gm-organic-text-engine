@@ -11,7 +11,7 @@ First, you'll need to import a font. *Right click the Fonts folder in the asset 
 
     text_engine_print("TEST!", 50, 50, 2, NAME_OF_FONT, c_white, 0, "\n", [], false, 0);
 
-#### **Explanation**
+#### ***Explanation***
 ```"TEST!"``` - The text to write
 
 ```50, 50``` - The starting X and Y position of the text
