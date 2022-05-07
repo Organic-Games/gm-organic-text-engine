@@ -131,7 +131,7 @@ advancedtext = undefined;
 					style_check();
 					delay = textspeed;
 				} else {
-					if(char == "\\" and string_char_at(toprint,onchar-1) != "\\") {
+					if(advancedtext and char == "\\" and string_char_at(toprint,onchar-1) != "\\") {
 						onchar++;
 						delay = textspeed;
 					} else {
