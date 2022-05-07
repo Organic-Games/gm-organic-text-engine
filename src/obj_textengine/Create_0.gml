@@ -62,6 +62,32 @@ advancedtext = undefined;
 	}
 #endregion
 
+#region Get color
+	function get_color_string(str) {
+		switch(str) {
+			case "aqua":    return c_aqua; break;
+			case "black":   return c_black; break;
+			case "blue":    return c_blue; break;
+			case "dkgray":  return c_dkgray; break;
+			case "fuchsia": return c_fuchsia; break;
+			case "gray":    return c_gray; break;
+			case "green":   return c_green; break;
+			case "lime":    return c_lime; break;
+			case "ltgray":  return c_ltgray; break;
+			case "maroon":  return c_maroon; break;
+			case "navy":    return c_navy; break;
+			case "olive":   return c_olive; break;
+			case "orange":  return c_orange; break;
+			case "purple":  return c_purple; break;
+			case "red":     return c_red; break;
+			case "silver":  return c_silver; break;
+			case "teal":    return c_teal; break;
+			case "white":   return c_white; break;
+			case "yellow":  return c_yellow; break;
+		}
+	}
+#endregion
+
 #region Style check
 	function style_check(){
 		onchar++;
@@ -83,11 +109,11 @@ advancedtext = undefined;
 		//Commands
 		for(var i = 0; i < array_length(strs); i++){
 			if(string_pos("style",strs[i]) != 0)
-				textstyle = int64(get_command_param(strs[i],"style "));
+				textstyle = int64(get_command_param(strs[i],"style"));
 			if(string_pos("color",strs[i]) != 0)
-				textcolor = asset_get_index("c_"+get_command_param(strs[i],"color "));
+				textcolor = get_color_string(get_command_param(strs[i],"color"));
 			if(string_pos("extra",strs[i]) != 0)
-				otherdata = int64(get_command_param(strs[i],"extra "));
+				otherdata = int64(get_command_param(strs[i],"extra"));
 		}
 		
 		stylestring = "";
@@ -101,11 +127,11 @@ advancedtext = undefined;
 				draw_set_font(styletable[onchar-1][0]);
 				char = string_char_at(toprint,onchar);
 			
-				if(advancedtext and char == "[" and string_char_at(toprint,onchar+1) != "[" and (string_char_at(toprint,onchar-1) != "[" or onchar == 1)){
+				if(advancedtext and char == "[" and (string_char_at(toprint,onchar-1) != "\\" or onchar == 1)){
 					style_check();
 					delay = textspeed;
 				} else {
-					if(char == "[" and string_char_at(toprint,onchar-1) == "["){
+					if(char == "\\" and string_char_at(toprint,onchar-1) != "\\") {
 						onchar++;
 						delay = textspeed;
 					} else {
