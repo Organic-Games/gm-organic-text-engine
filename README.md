@@ -67,8 +67,6 @@ The code above would look like this:
 
 In the string, ```[color red]``` turns the color to red, ```[color white, style 1]``` changes the color to white and the style to 1 (shaky), and ```[style 2, extra 10, color aqua]``` changes the style to 2 (wavy vertical), the extra data (wave speed) to 10, and the color to aqua.
 
----
-
 ## Credits
 Created by [**Chase Peck**](https://chasepeck.com)
 
